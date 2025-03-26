@@ -7,85 +7,86 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearFavoritesBtn = document.getElementById("clear-favorites");
 
     let carsData = [];
-  
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 
-  fetch("http://localhost:3000/cars")
-    .then(response => response.json())
-    .then(data => {
-        carsData = data;
-        displayCars(carsData);
-    });
+    fetch("cars.json")
+        .then(response => response.json())
+        .then(data => {
+            carsData = data.cars; 
+            displayCars(carsData);
+            setupFavoriteButtons(); 
+        })
+        .catch(error => console.error("Error fetching cars:", error));
 
-function displayCars(cars) {
-    carContainer.innerHTML = "";
-    cars.forEach(car => {
-        const carCard = document.createElement("div");
-        carCard.classList.add("car-card");
-        carCard.innerHTML = `
-            <img src="${car.image}" alt="${car.name}">
-            <h3>${car.name}</h3>
-            <p>Price: ${car.price}</p>
-            <p>Type: ${car.type}</p>
-            <button class="favorite-btn" data-name="${car.name}">❤️ Add to Favorites</button>
-        `;
-        carContainer.appendChild(carCard);
-    });
-}
-
-function setupFilters() {
-    searchInput.addEventListener("input", filterCars);
-    priceFilter.addEventListener("change", filterCars);
-    typeFilter.addEventListener("change", filterCars);
-}
-
-function filterCars() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const maxPrice = priceFilter.value;
-    const selectedType = typeFilter.value;
-
-    const filteredCars = carsData.filter(car =>
-        car.name.toLowerCase().includes(searchTerm) &&
-        (maxPrice === "all" || parseInt(car.price.replace(/\D/g, "")) <= parseInt(maxPrice)) &&
-        (selectedType === "all" || car.type === selectedType)
-    );
-    displayCars(filteredCars);
-}
-
-setupFilters();
-
-function setupFavoriteButtons()  {
-    document.querySelectorAll(".favorite-btn").forEach(button => {
-        button.addEventListener("click", (e) => {
-            const carName = e.target.getAttribute("data-name");
-            if (!favorites.includes(carName)) {
-                favorites.push(carName);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
-                displayFavorites();
-            }
+    function displayCars(cars) {
+        carContainer.innerHTML = "";
+        cars.forEach(car => {
+            const carCard = document.createElement("div");
+            carCard.classList.add("car-card");
+            carCard.innerHTML = `
+                <img src="${car.image}" alt="${car.name}">
+                <h3>${car.name}</h3>
+                <p>Price: Ksh ${car.price}</p>
+                <p>Type: ${car.type}</p>
+                <button class="favorite-btn" data-name="${car.name}">❤️ Add to Favorites</button>
+            `;
+            carContainer.appendChild(carCard);
         });
+    }
+
+    function setupFilters() {
+        searchInput.addEventListener("input", filterCars);
+        priceFilter.addEventListener("change", filterCars);
+        typeFilter.addEventListener("change", filterCars);
+    }
+
+    function filterCars() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const maxPrice = priceFilter.value;
+        const selectedType = typeFilter.value;
+
+        const filteredCars = carsData.filter(car => {
+            const priceNum = parseInt(car.price.replace(/\D/g, "")); 
+            return (
+                car.name.toLowerCase().includes(searchTerm) &&
+                (maxPrice === "all" || priceNum <= parseInt(maxPrice)) &&
+                (selectedType === "all" || car.type === selectedType)
+            );
+        });
+        displayCars(filteredCars);
+        setupFavoriteButtons(); 
+    }
+
+    function setupFavoriteButtons() {
+        document.querySelectorAll(".favorite-btn").forEach(button => {
+            button.addEventListener("click", (e) => {
+                const carName = e.target.getAttribute("data-name");
+                if (!favorites.includes(carName)) {
+                    favorites.push(carName);
+                    localStorage.setItem("favorites", JSON.stringify(favorites));
+                    displayFavorites();
+                }
+            });
+        });
+    }
+
+    function displayFavorites() {
+        favoritesContainer.innerHTML = "<h2>Favorites</h2>";
+        favorites.forEach(carName => {
+            const carItem = document.createElement("p");
+            carItem.textContent = carName;
+            favoritesContainer.appendChild(carItem);
+        });
+        favoritesContainer.appendChild(clearFavoritesBtn); 
+    }
+
+    clearFavoritesBtn.addEventListener("click", () => {
+        favorites = [];
+        localStorage.removeItem("favorites");
+        displayFavorites();
     });
-}
 
-function displayFavorites() {
-    favoritesContainer.innerHTML = "<h2>Favorites</h2>";
-    favorites.forEach(carName => {
-        const carItem = document.createElement("p");
-        carItem.textContent = carName;
-        favoritesContainer.appendChild(carItem);
-    });
-}
-
-displayFavorites();
-
-clearFavoritesBtn.addEventListener("click", () => {
-    favorites = [];
-    localStorage.removeItem("favorites");
+    setupFilters();
     displayFavorites();
-});
-
-
-
-
 });
