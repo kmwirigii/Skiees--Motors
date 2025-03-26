@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skiees Motors</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to Skiees Motors</h1>
+    <header>
+        <h1>Welcome to Skiees Motors</h1>
+    </header>
+
+    <section id="filters">
+        <input type="text" id="search" placeholder="Search for a car...">
+        <select id="price-filter">
+            <option value="all">All Prices</option>
+            <option value="2000000">Up to 2M</option>
+            <option value="5000000">Up to 5M</option>
+            <option value="10000000">Up to 10M</option>
+        </select>
+        <select id="type-filter">
+            <option value="all">All Types</option>
+            <option value="SUV">SUV</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Truck">Truck</option>
+        </select>
+    </section>
+
+    <section id="car-container">
+    </section>
+
+    <section id="favorites-container">
+        <h2>Favorites</h2>
+        <!-- Favorite carss will be shown here  -->
+    </section>
+
     <script src="script.js"></script>
-    
 </body>
 </html>
