@@ -79,6 +79,13 @@ function displayFavorites() {
 
 displayFavorites();
 
+clearFavoritesBtn.addEventListener("click", () => {
+    favorites = [];
+    localStorage.removeItem("favorites");
+    displayFavorites();
+});
+
+
 
 
 });
