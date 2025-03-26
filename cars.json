@@ -66,12 +66,11 @@
         "type": "Trailers",
         "image": "images/mitsubishi-fuso.jpg"
       },
-    {
-      "name": "Golf STI",
-      "price": "1,500,000",
-      "type": "Hutchback",
-      "image": "images/golf hutchback.jpg"
-    }
+      {
+        "name": "Golf STI",
+        "price": "1,500,000",
+        "type": "Hutchback",
+        "image": "images/golf hutchback.jpg"
+      }
     ]
   }
-  
