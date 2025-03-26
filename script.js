@@ -55,6 +55,29 @@ function filterCars() {
 
 setupFilters();
 
+function setupFavoriteButtons()  {
+    document.querySelectorAll(".favorite-btn").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const carName = e.target.getAttribute("data-name");
+            if (!favorites.includes(carName)) {
+                favorites.push(carName);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                displayFavorites();
+            }
+        });
+    });
+}
+
+function displayFavorites() {
+    favoritesContainer.innerHTML = "<h2>Favorites</h2>";
+    favorites.forEach(carName => {
+        const carItem = document.createElement("p");
+        carItem.textContent = carName;
+        favoritesContainer.appendChild(carItem);
+    });
+}
+
+displayFavorites();
 
 
 
