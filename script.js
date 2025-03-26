@@ -34,4 +34,28 @@ function displayCars(cars) {
     });
 }
 
+function setupFilters() {
+    searchInput.addEventListener("input", filterCars);
+    priceFilter.addEventListener("change", filterCars);
+    typeFilter.addEventListener("change", filterCars);
+}
+
+function filterCars() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const maxPrice = priceFilter.value;
+    const selectedType = typeFilter.value;
+
+    const filteredCars = carsData.filter(car =>
+        car.name.toLowerCase().includes(searchTerm) &&
+        (maxPrice === "all" || parseInt(car.price.replace(/\D/g, "")) <= parseInt(maxPrice)) &&
+        (selectedType === "all" || car.type === selectedType)
+    );
+    displayCars(filteredCars);
+}
+
+setupFilters();
+
+
+
+
 });
