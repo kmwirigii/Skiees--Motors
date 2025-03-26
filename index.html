@@ -9,31 +9,28 @@
 <body>
     <header>
         <h1>Welcome to Skiees Motors</h1>
+        <p>Find your dream car today</p>
     </header>
 
-    <section id="filters">
-        <input type="text" id="search" placeholder="Search for a car...">
+    <div class="filters">
+        <input type="text" id="search" placeholder="Search by name...">
         <select id="price-filter">
             <option value="all">All Prices</option>
-            <option value="2000000">Up to 2M</option>
-            <option value="5000000">Up to 5M</option>
-            <option value="10000000">Up to 10M</option>
+            <option value="20000">$20,000</option>
+            <option value="30000">$30,000</option>
         </select>
         <select id="type-filter">
             <option value="all">All Types</option>
             <option value="SUV">SUV</option>
             <option value="Sedan">Sedan</option>
-            <option value="Truck">Truck</option>
         </select>
-    </section>
+    </div>
 
-    <section id="car-container">
-    </section>
-
-    <section id="favorites-container">
+    <div id="car-container"></div>
+    <div id="favorites-container">
         <h2>Favorites</h2>
-        <!-- Favorite carss will prsented in this part -->
-    </section>
+        <button id="clear-favorites">Clear Favorites</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
