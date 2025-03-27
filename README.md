@@ -1,9 +1,9 @@
 
-Skiees Motors 🚗
+Skiees Motors 🚗 ![Alt text](./images/skieesmotors.jpg)
 Skiees Motors is a web-based car dealership  system that allows buyers to browse, search, and filter cars based on their preferences. 
 It also fetches car data  and presents a well organized way.
 
-
+![Alt text](./images/landing.jpg)
 📌 Features:
 ✅ Fetch and Display Cars – It can be abble to clearly fetch and display data.
 ✅ Search Functionality –   Buyers can easily navigate throughit while searching for desired cars.
