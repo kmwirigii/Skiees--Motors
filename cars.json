@@ -61,6 +61,42 @@
         "image": "images/scania-r500.jpg"
       },
       {
+        "name": "Toyota Corrolla",
+        "price": "1,000,000",
+        "type": "Sedan",
+        "image": "images/corrolla-axio.jpg"
+      },
+      {
+        "name": "JEEP",
+        "price": "4,600,000",
+        "type": "SUV",
+        "image": "images/jeep.jpg"
+      },
+      {
+        "name": "Lexus-NX300",
+        "price": "3,700,000",
+        "type": "Hutchback",
+        "image": "images/Lexus-NX300.jpg"
+      },
+      {
+        "name": "Mercedes-E250",
+        "price": "2,200,000",
+        "type": "Sedan",
+        "image": "images/Mercedes E-250.jpg"
+      },
+      {
+        "name": "Nissan-serena",
+        "price": "1,600,000",
+        "type": "Vans",
+        "image": "images/Nissan-serena.jpg"
+      },
+      {
+        "name": "Toyota-prado",
+        "price": "7,600,000",
+        "type": "SUV",
+        "image": "images/Toyota-prado.jpg"
+      },
+      {
         "name": "Mitsubishi Fuso",
         "price": "7,000,000",
         "type": "Trailers",
