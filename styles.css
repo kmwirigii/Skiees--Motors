@@ -38,12 +38,13 @@ header {
 }
 
 .favorite-btn {
-    background-color: black;
-    color: goldenrod;
-    padding: 5px;
-    border: none;
-    cursor: pointer;
+    background-color: grey; 
+    color: white;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-weight: bold;
 }
+
 
 #favorites-container {
     margin-top: 20px;
