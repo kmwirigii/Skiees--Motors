@@ -65,4 +65,13 @@ header {
     color: white; 
 }
 
-
+header {
+    background-image: url('images/kevv.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white;
+    padding: 60px 20px; 
+    text-align: center;
+    font-size: 24px;
+}
