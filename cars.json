@@ -40,7 +40,7 @@
         "name": "Mazda CX-5",
         "price": "3,500,000",
         "type": "SUV",
-        "image": "images/mazda-cx5.jpg"
+        "image": "images/mazda cx-5.jpg"
       },
       {
         "name": "Nissan X-Trail",
@@ -52,7 +52,7 @@
         "name": "Toyota Land Cruiser",
         "price": "6,000,000",
         "type": "SUV",
-        "image": "images/toyota-landcruiser.jpg"
+        "image": "images/toyota-landcruiser.jpg.jpg"
       },
       {
         "name": "Scania R500",
@@ -64,7 +64,7 @@
         "name": "Mitsubishi Fuso",
         "price": "7,000,000",
         "type": "Trailers",
-        "image": "images/mitsubishi-fuso.jpg"
+        "image": "images/mitsubishi-fuso.jpg.jpg"
       },
       {
         "name": "Golf STI",

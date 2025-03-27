@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let carsData = [];
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-
+    
     fetch("cars.json")
         .then(response => response.json())
         .then(data => {
