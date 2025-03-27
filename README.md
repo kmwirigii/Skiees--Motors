@@ -3,27 +3,28 @@ Skiees Motors 🚗
 Skiees Motors is a web-based car dealership  system that allows buyers to browse, search, and filter cars based on their preferences. 
 It also fetches car data  and presents a well organized way.
 
+
 📌 Features:
 ✅ Fetch and Display Cars – It can be abble to clearly fetch and display data.
 ✅ Search Functionality –   Buyers can easily navigate throughit while searching for desired cars.
 ✅ Filter by Price or Category – It can  help buyers and users to filter car listings based on price range and vehicle type (SUV, Sedan, sport, hutchback).
 ✅ Favorites List – Users can save cars to their favorites for later viewing.
-✅ Responsive UI – The website is designed to work seamlessly on desktops, tablets, and mobile devices.
+✅ Responsive UI – The website is designed to work on desktops, tablets, and mobile devices.
 
 
 
 
 
 🛠️ Technologies Used:
-HTML – Structure of the web pages.
+1.HTML – Structure of the web pages.
 
-CSS – Styling and layout for an appealing UI.
+2.CSS – Styling and layout for an appealing UI.
 
-JavaScript – Handles dynamic functionality such as fetching and displaying data.
+3.JavaScript – Handles functions such as fetching and displaying data.
 
-JSON – Stores car inventory data.
+4.JSON – Stores car data.
 
-Fetch API – Retrieves car data dynamically.
+5.Fetch API – Retrieves car data .
 
 
 
@@ -58,17 +59,17 @@ Simply open the index.html file in a web browser to view the application.
 
 
 🤝 Contributions:
-Contributions are welcome! If you would like to improve this project, follow these steps:
+Contributions are welcome.If you would like to improve this project, follow these steps:
 
-Fork the repository.
+1.Fork the repository.
 
-Create a new branch (git checkout -b feature-branch).
+2.Create a new branch (git checkout -b feature-branch).
 
-Make your changes and commit (git commit -m "Added a new feature").
+3.Make your changes and commit (git commit -m "Added a new feature").
 
-Push to your forked repository (git push origin feature-branch).
+4.Push to your forked repository (git push origin feature-branch).
 
-Open a pull request.
+5.Open a pull request.
 
 
 
